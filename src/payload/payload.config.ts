@@ -20,12 +20,12 @@ import { Logo } from "@/app/(front)/[locale]/_components/layout/Logo";
 const adapter = s3Adapter({
   config: {
     credentials: {
-      accessKeyId: process.env.AWS_ACCESS_ID || "",
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "",
+      accessKeyId: process.env.ACCESS_ID_AWS || "",
+      secretAccessKey: process.env.SECRET_ACCESS_KEY_AWS || "",
     },
-    region: process.env.AWS_REGION || "",
+    region: process.env.REGION_AWS || "",
   },
-  bucket: process.env.AWS_S3_BUCKET || "",
+  bucket: process.env.S3_BUCKET_AWS || "",
 });
 
 // @ts-ignore
