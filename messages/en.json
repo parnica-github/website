@@ -1,0 +1,48 @@
+{
+  "Index": {
+    "title": "Hello World",
+    "button": "Open Link"
+  },
+  "Metadata": {
+    "title": "Parnica Healthcare Solutions"
+  },
+  "Layout": {
+    "header": {
+      "home": "Home Page",
+      "corporate": "Corporate",
+      "about": "About",
+      "career": "Career",
+      "gdpr": "GDPR",
+      "partnership": "Partnership",
+      "products": "Products",
+      "contact": "Contact"
+    },
+    "footer": {
+      "brands": "Brands",
+      "contact": "Contact",
+      "copyright": "Parnica Healthcare Solutions. All Rights Reserved."
+    }
+  },
+  "Contact": {
+    "title": "Contact",
+    "form": {
+      "title": "Please fill out the form for us to be able to return.",
+      "back-to-you": "We will get back to you as soon as possible.",
+      "name": "Name",
+      "surname": "Last Name",
+      "email": "Email",
+      "phone-number": "Phone Number",
+      "your-message": "Your Message",
+      "send": "Send"
+    }
+  },
+  "GDPR": {
+    "title": "General Data Protection Regulations"
+  },
+  "Products": {
+    "title": "Our Products"
+  },
+  "Partnership": {
+    "title": "Partnership"
+  }
+}

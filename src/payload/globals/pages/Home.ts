@@ -1,58 +1,60 @@
-import { GlobalConfig } from 'payload/types';
+import { GlobalConfig } from "payload/types";
 
 export const Home: GlobalConfig = {
-  slug: 'home',
+  slug: "home",
   admin: {
-    group: 'Pages',
+    group: "Pages",
   },
   fields: [
     {
-      name: 'hero',
-      type: 'group',
+      name: "hero",
+      type: "group",
       fields: [
         {
-          name: 'image',
-          type: 'upload',
+          name: "image",
+          type: "upload",
           required: true,
-          relationTo: 'image',
+          relationTo: "image",
         },
         {
-          name: 'title',
-          type: 'text',
+          name: "title",
+          type: "text",
           localized: true,
           required: true,
         },
         {
-          name: 'about',
-          type: 'textarea',
+          name: "about",
+          type: "textarea",
           localized: true,
           required: true,
         },
       ],
     },
     {
-      name: 'sections',
-      type: 'array',
+      name: "sections",
+      type: "array",
       fields: [
         {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'image',
+          name: "image",
+          type: "upload",
+          relationTo: "image",
           required: true,
         },
         {
-          name: 'title',
-          type: 'text',
+          name: "title",
+          type: "text",
+          localized: true,
           required: true,
         },
         {
-          name: 'description',
-          type: 'textarea',
+          name: "description",
+          type: "textarea",
+          localized: true,
           required: true,
         },
         {
-          name: 'link',
-          type: 'text',
+          name: "link",
+          type: "text",
         },
       ],
     },

@@ -1,16 +1,25 @@
 import { IconClock, IconMail, IconMap2, IconPhone } from "@tabler/icons-react";
 import classNames from "classnames";
-import Link from "next/link";
 
 import { getContact, getFooter } from "@/lib/getGlobal";
 
 import { getSocialIcon } from "../getSocialIcon";
 import { Text, Title } from "../ui";
 import { Logo } from "./Logo";
+import { getLocale, getTranslations } from "next-intl/server";
+import { Link } from "@/lib/navigation";
+import slugify from "slugify";
+import { getPartners } from "@/lib/getCollection";
 
 export async function Footer() {
   const { about, socials } = await getFooter();
   const { address, email, phone, time } = await getContact();
+
+  const locale = await getLocale();
+
+  const partners = await getPartners(locale);
+
+  const t = await getTranslations();
 
   return (
     <footer className="font-medium text-white">
@@ -43,18 +52,26 @@ export async function Footer() {
 
         <div className="sm:flex-1">
           <Title level={3} className="mb-5 text-white">
-            sadasdasdsa
+            {t("Layout.footer.brands")}
           </Title>
           <div className="flex flex-col gap-3 text-sm">
-            <Link href="/">Lorem</Link>
-            <Link href="/">Lorem</Link>
-            <Link href="/">Lorem</Link>
+            {partners &&
+              partners.map((partner) => (
+                <Link
+                  key={partner.id}
+                  href={`/partnership/${slugify(partner.Title, {
+                    lower: true,
+                  })}`}
+                >
+                  {partner.Title}
+                </Link>
+              ))}
           </div>
         </div>
 
         <div className="sm:flex-1">
           <Title level={3} className="mb-5 text-white">
-            dasdsad
+            {t("Layout.footer.contact")}
           </Title>
 
           <div className="flex flex-col gap-5">
@@ -93,7 +110,9 @@ export async function Footer() {
         </div>
       </div>
       <div className="bg-sky-600 p-5 text-center text-sm">
-        <span>© {new Date().getFullYear()} dasdasd</span>
+        <span>
+          © {new Date().getFullYear()} {t("Layout.footer.copyright")}
+        </span>
       </div>
     </footer>
   );

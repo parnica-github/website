@@ -2,6 +2,7 @@
 
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import classNames from "classnames";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import { Logo } from "../Logo";
@@ -9,7 +10,7 @@ import { Drawer } from "./Drawer";
 import { NavItem } from "./NavItem";
 
 export function ClientHeader() {
-  // const t = useTranslations('Layout');
+  const t = useTranslations("Layout");
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpened, setDrawerOpened] = useState(false);
@@ -55,37 +56,33 @@ export function ClientHeader() {
         />
 
         <nav className="hidden gap-3 lg:flex">
+          <NavItem label={t("header.home")} href="/" isScrolled={isScrolled} />
           <NavItem
-            label={"t('header.home')"}
-            href="/"
-            isScrolled={isScrolled}
-          />
-          <NavItem
-            label={"t('header.corporate')"}
+            label={t("header.corporate")}
             href="/about"
             menu={[
-              { label: "t('header.about')", href: "/about" },
+              { label: t("header.about"), href: "/about" },
               {
-                label: "t('header.career')",
+                label: t("header.career"),
                 href: "https://linkedin.com/company/parnica-healtcare-solutions",
                 external: true,
               },
-              { label: "t('header.gdpr')", href: "/kvkk" },
+              { label: t("header.gdpr"), href: "/kvkk" },
             ]}
             isScrolled={isScrolled}
           />
           <NavItem
-            label={"t('header.partnership')"}
+            label={t("header.partnership")}
             href="/partnership"
             isScrolled={isScrolled}
           />
           <NavItem
-            label={"t('header.products')"}
+            label={t("header.products")}
             href="/products"
             isScrolled={isScrolled}
           />
           <NavItem
-            label={"t('header.contact')"}
+            label={t("header.contact")}
             href="/contact"
             isScrolled={isScrolled}
           />

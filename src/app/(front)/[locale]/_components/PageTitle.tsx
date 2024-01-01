@@ -1,22 +1,24 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { getHome } from '@/lib/getGlobal';
-import { isImageType } from '@/lib/isImageType';
+import { getHome } from "@/lib/getGlobal";
+import { isImageType } from "@/lib/isImageType";
 
-import { Title } from './ui';
+import { Title } from "./ui";
+import { getLocale } from "next-intl/server";
 
 interface PageTitleProps {
   title: string;
 }
 
 export async function PageTitle({ title }: PageTitleProps) {
+  const locale = await getLocale();
   const {
     hero: { image },
-  } = await getHome();
+  } = await getHome(locale);
 
   return (
     <div className="absolute inset-x-0 h-96">
-      {isImageType(image) && image.url && (
+      {image && isImageType(image) && image.url && (
         <Image src={image.url} alt="Medical" fill objectFit="cover" />
       )}
 

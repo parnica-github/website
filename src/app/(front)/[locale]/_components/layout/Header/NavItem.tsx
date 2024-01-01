@@ -1,7 +1,7 @@
+import { Link } from "@/lib/navigation";
 import { Menu, Transition } from "@headlessui/react";
 import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import classNames from "classnames";
-import Link from "next/link";
 import { Fragment } from "react";
 
 export interface NavItemProps {

@@ -1,41 +1,43 @@
-import classNames from 'classnames';
-import Image from 'next/image';
-import Link from 'next/link';
+import classNames from "classnames";
+import Image from "next/image";
 
-import { isImageType } from '@/lib/isImageType';
-import { Home } from '@/payload/types';
+import { isImageType } from "@/lib/isImageType";
+import { Home } from "@/payload/types";
 
-import { Button, Text, Title } from './ui';
-
+import { Button, Text, Title } from "./ui";
+import { Link } from "@/lib/navigation";
+import { getTranslations } from "next-intl/server";
 interface SectionProps {
   reverse?: boolean;
-  data: NonNullable<Home['sections']>[number];
+  data: NonNullable<Home["sections"]>[number];
 }
 
-const getLinkComponent = (linkUrl: string) => {
-  if (linkUrl.startsWith('/')) {
+const getLinkComponent = (linkUrl: string, buttonText: string) => {
+  if (linkUrl.startsWith("/")) {
     return (
       <Link href={linkUrl}>
-        <Button label="Press Me" className="mt-10" />
+        <Button label={buttonText} className="mt-10 w-full sm:w-auto" />
       </Link>
     );
   }
 
   return (
     <a href={linkUrl} target="_blank" rel="noopener noreferrer">
-      <Button label="Press Me" className="mt-10" />
+      <Button label={buttonText} className="mt-10 w-full sm:w-auto" />
     </a>
   );
 };
 
-export function Section({ reverse, data }: SectionProps) {
+export async function Section({ reverse, data }: SectionProps) {
   const { title, image, description, link } = data;
+
+  const t = await getTranslations();
 
   return (
     <section
-      className={classNames('flex flex-col gap-10', {
-        'md:flex-row-reverse': reverse,
-        'md:flex-row': !reverse,
+      className={classNames("flex flex-col gap-10", {
+        "md:flex-row-reverse": reverse,
+        "md:flex-row": !reverse,
       })}
     >
       {isImageType(image) && image.url && (
@@ -55,7 +57,7 @@ export function Section({ reverse, data }: SectionProps) {
           {title}
         </Title>
         <Text paragraph>{description}</Text>
-        {link && getLinkComponent(link)}
+        {link && getLinkComponent(link, t("Index.button"))}
       </div>
     </section>
   );

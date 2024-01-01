@@ -1,32 +1,33 @@
-import { GlobalConfig } from 'payload/types';
+import { GlobalConfig } from "payload/types";
 
 export const Footer: GlobalConfig = {
-  slug: 'footer',
+  slug: "footer",
   fields: [
     {
-      name: 'about',
-      type: 'textarea',
+      name: "about",
+      type: "textarea",
+      localized: true,
       required: true,
     },
     {
-      name: 'socials',
-      type: 'array',
+      name: "socials",
+      type: "array",
       fields: [
         {
-          name: 'name',
-          type: 'select',
+          name: "name",
+          type: "select",
           required: true,
           options: [
-            { label: 'Facebook', value: 'facebook' },
-            { label: 'Linkedin', value: 'linkedin' },
-            { label: 'Instagram', value: 'instagram' },
-            { label: 'Youtube', value: 'youtube' },
-            { label: 'Twitter', value: 'twitter' },
+            { label: "Facebook", value: "facebook" },
+            { label: "Linkedin", value: "linkedin" },
+            { label: "Instagram", value: "instagram" },
+            { label: "Youtube", value: "youtube" },
+            { label: "Twitter", value: "twitter" },
           ],
         },
         {
-          name: 'url',
-          type: 'text',
+          name: "url",
+          type: "text",
           required: true,
         },
       ],

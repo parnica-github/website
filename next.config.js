@@ -2,10 +2,18 @@
 const path = require("path");
 const { withPayload } = require("@payloadcms/next-payload");
 
+const withNextIntl = require("next-intl/plugin")();
+
 module.exports = withPayload(
-  {
-    // your Next config here
-  },
+  withNextIntl({
+    images: {
+      remotePatterns: [
+        {
+          hostname: "parnica-website-bucket.s3.eu-central-1.amazonaws.com",
+        },
+      ],
+    },
+  }),
   {
     // The second argument to `withPayload`
     // allows you to specify paths to your Payload dependencies

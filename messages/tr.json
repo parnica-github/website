@@ -1,0 +1,48 @@
+{
+  "Index": {
+    "title": "Merhaba Dünya",
+    "button": "Linke Git"
+  },
+  "Metadata": {
+    "title": "Parnica Sağlık Çözümleri"
+  },
+  "Layout": {
+    "header": {
+      "home": "Ana Sayfa",
+      "corporate": "Şirket",
+      "about": "Hakkında",
+      "career": "Kariyer",
+      "gdpr": "KVKK",
+      "partnership": "Partnerlik",
+      "products": "Ürünler",
+      "contact": "İletişim"
+    },
+    "footer": {
+      "brands": "Markalar",
+      "contact": "İletişim",
+      "copyright": "Parnica Sağlık Çözümleri. Tüm Hakları Saklıdır."
+    }
+  },
+  "Contact": {
+    "title": "İletişim",
+    "form": {
+      "title": "Geri dönüş yapabilmemiz için formu doldurun.",
+      "back-to-you": "Size en kısa sürede geri dönüş sağlayacağız.",
+      "name": "İsim",
+      "surname": "Soyisim",
+      "email": "E Posta",
+      "phone-number": "Telefon Numarası",
+      "your-message": "Mesajınız",
+      "send": "Gönder"
+    }
+  },
+  "GDPR": {
+    "title": "Kişisel Verilerin Korunumu Kanunu"
+  },
+  "Products": {
+    "title": "Ürünlerimiz"
+  },
+  "Partnership": {
+    "title": "Partnerlik"
+  }
+}

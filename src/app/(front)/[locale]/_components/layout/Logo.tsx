@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from "react";
+import { SVGProps } from "react";
 
 interface LogoProps extends SVGProps<SVGSVGElement> {
-  color: string;
+  color?: string;
   turkish: boolean;
 }
 
-export function Logo({ color, turkish, ...rest }: LogoProps) {
+export function Logo({ color = "white", turkish, ...rest }: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
