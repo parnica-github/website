@@ -13,19 +13,6 @@ module.exports = withPayload(
         },
       ],
     },
-    env: {
-      MONGODB_URI: process.env.MONGODB_URI,
-      PAYLOAD_SECRET: process.env.PAYLOAD_SECRET,
-      PAYLOAD_CONFIG_PATH: process.env.PAYLOAD_CONFIG_PATH,
-      ACCESS_ID_AWS: process.env.ACCESS_ID_AWS,
-      SECRET_ACCESS_KEY_AWS: process.env.SECRET_ACCESS_KEY_AWS,
-      S3_BUCKET_AWS: process.env.S3_BUCKET_AWS,
-      REGION_AWS: process.env.REGION_AWS,
-      EMAIL_HOST: process.env.EMAIL_HOST,
-      EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
-      EMAIL_TO: process.env.EMAIL_TO,
-      EMAIL_USER: process.env.EMAIL_USER,
-    },
   }),
   {
     // The second argument to `withPayload`
