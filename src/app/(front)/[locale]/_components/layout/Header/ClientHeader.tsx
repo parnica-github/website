@@ -98,7 +98,7 @@ export function ClientHeader() {
             isScrolled={isScrolled}
           />
 
-          <LanguageSelect />
+          <LanguageSelect showLanguage={false} />
         </nav>
 
         <button
