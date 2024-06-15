@@ -12,12 +12,11 @@ import slugify from "slugify";
 import { getPartners } from "@/lib/getCollection";
 
 export async function Footer() {
-  const { about, socials } = await getFooter();
-  const { address, email, phone, time } = await getContact();
-
   const locale = await getLocale();
 
   const partners = await getPartners(locale);
+  const { about, socials } = await getFooter(locale);
+  const { address, email, phone, time } = await getContact();
 
   const t = await getTranslations();
 

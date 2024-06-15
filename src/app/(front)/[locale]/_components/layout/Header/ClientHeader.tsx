@@ -4,16 +4,21 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import { Logo } from "../Logo";
 import { Drawer } from "./Drawer";
 import { NavItem } from "./NavItem";
+import { LanguageSelect } from "./LanguageSelect";
+import Link from "next/link";
 
 export function ClientHeader() {
   const t = useTranslations("Layout");
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [drawerOpened, setDrawerOpened] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,6 +37,10 @@ export function ClientHeader() {
     };
   }, []);
 
+  useEffect(() => {
+    setDrawerOpened(false);
+  }, [pathname, searchParams]);
+
   return (
     <>
       <header
@@ -46,16 +55,18 @@ export function ClientHeader() {
           }
         )}
       >
-        <Logo
-          color={isScrolled || drawerOpened ? "black" : "white"}
-          className={classNames("transition-all", {
-            "w-56 sm:w-72": !isScrolled || drawerOpened,
-            "w-32": isScrolled,
-          })}
-          turkish={false}
-        />
+        <Link href="/">
+          <Logo
+            color={isScrolled || drawerOpened ? "black" : "white"}
+            className={classNames("transition-all", {
+              "w-56 sm:w-72": !isScrolled || drawerOpened,
+              "w-32": isScrolled,
+            })}
+            turkish={false}
+          />
+        </Link>
 
-        <nav className="hidden gap-3 lg:flex">
+        <nav className="hidden gap-3 lg:flex items-center">
           <NavItem label={t("header.home")} href="/" isScrolled={isScrolled} />
           <NavItem
             label={t("header.corporate")}
@@ -86,6 +97,8 @@ export function ClientHeader() {
             href="/contact"
             isScrolled={isScrolled}
           />
+
+          <LanguageSelect />
         </nav>
 
         <button

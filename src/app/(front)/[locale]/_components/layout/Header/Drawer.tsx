@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 import { NavItem } from "./NavItem";
 import { useTranslations } from "next-intl";
+import { LanguageSelect } from "./LanguageSelect";
 
 interface DrawerProps {
   opened: boolean;
@@ -40,7 +41,11 @@ export function Drawer({ opened }: DrawerProps) {
         href="/corporate"
         menu={[
           { label: t("header.about"), href: "/about" },
-          { label: t("header.career"), href: "/career" },
+          {
+            label: t("header.career"),
+            href: "https://linkedin.com/company/parnica-healtcare-solutions",
+            external: true,
+          },
           { label: t("header.gdpr"), href: "/kvkk" },
         ]}
         isScrolled
@@ -48,6 +53,7 @@ export function Drawer({ opened }: DrawerProps) {
       <NavItem label={t("header.partnership")} href="/partnership" isScrolled />
       <NavItem label={t("header.products")} href="/products" isScrolled />
       <NavItem label={t("header.contact")} href="/contact" isScrolled />
+      <LanguageSelect />
     </aside>
   );
 }

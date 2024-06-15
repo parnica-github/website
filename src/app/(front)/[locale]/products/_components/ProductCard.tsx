@@ -12,8 +12,8 @@ interface PartnerCardProps {
 
 export function ProductCard({ image, title, url, brand }: PartnerCardProps) {
   return (
-    <Link href={url}>
-      <div className="w-72 rounded overflow-hidden shadow-lg py-3 px-5 flex flex-col gap-5">
+    <Link href={url} className="w-full sm:w-72">
+      <div className="rounded overflow-hidden border shadow-lg py-3 px-5 flex flex-col gap-5 min-h-full">
         <div className="relative h-72 w-full">
           {image && isImageType(image) && image.url && (
             <NextImage

@@ -20,8 +20,8 @@ export default async function Product({
   return (
     <DetailPageWrapper title={product.Title}>
       <div className="flex flex-col">
-        <div className="flex justify-center items-center gap-10">
-          <div className="relative w-[800px] h-96">
+        <div className="flex-col sm:flex-row flex justify-center items-center gap-10">
+          <div className="relative min-w-96 h-96">
             {image && isImageType(image) && image.url && (
               <NextImage
                 alt={image.alt}

@@ -12,5 +12,5 @@ export const getAbout = async (locale: string) =>
 export const getContact = async () =>
   (await getPayloadClient()).findGlobal({ slug: "contact" });
 
-export const getFooter = async () =>
-  (await getPayloadClient()).findGlobal({ slug: "footer" });
+export const getFooter = async (locale: string) =>
+  (await getPayloadClient()).findGlobal({ slug: "footer", locale });

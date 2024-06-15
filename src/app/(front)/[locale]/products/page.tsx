@@ -16,7 +16,7 @@ export default async function ProductsPage({
 
   return (
     <DetailPageWrapper title={t("title")}>
-      <div className="flex gap-10 items-center justify-center flex-col sm:flex-row">
+      <div className="flex flex-wrap gap-5 justify-center">
         {products.map((product) => (
           <ProductCard
             key={product.id}
