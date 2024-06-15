@@ -1,6 +1,5 @@
 import NextImage from "next/image";
 import { DetailPageWrapper } from "../../_components/DetailPageWrapper";
-import slugify from "slugify";
 import { notFound } from "next/navigation";
 import { isImageType } from "@/lib/isImageType";
 import parser from "html-react-parser";
