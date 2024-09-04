@@ -12,6 +12,8 @@ export default async function ReferencesPage({
 
   const references = await getReferences(locale);
 
+  console.log(references);
+
   return (
     <DetailPageWrapper title={t("title")}>
       <div className="flex gap-10 items-center justify-center flex-col">
