@@ -11,7 +11,7 @@ interface PartnerCardProps {
 
 export function ReferenceCard({ image, content, title }: PartnerCardProps) {
   return (
-    <div className="rounded overflow-hidden shadow-lg border flex gap-10 items-center w-full md:w-[56rem] p-5">
+    <div className="rounded overflow-hidden shadow-lg border flex-col sm:flex-row flex gap-10 items-center w-full md:w-[56rem] p-5">
       <div className="relative h-60 w-full">
         {image && isImageType(image) && image.url && (
           <NextImage alt={image.alt} src={image.url} fill objectFit="contain" />
