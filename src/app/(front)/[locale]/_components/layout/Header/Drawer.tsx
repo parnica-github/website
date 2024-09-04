@@ -46,6 +46,7 @@ export function Drawer({ opened }: DrawerProps) {
             href: "https://linkedin.com/company/parnica-healtcare-solutions",
             external: true,
           },
+          { label: t("header.references"), href: "/references" },
           { label: t("header.gdpr"), href: "/kvkk" },
         ]}
         isScrolled
