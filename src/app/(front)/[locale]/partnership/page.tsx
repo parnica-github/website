@@ -1,7 +1,7 @@
 import { getPartners } from "@/lib/getCollection";
 import { DetailPageWrapper } from "../_components/DetailPageWrapper";
 import { PartnerCard } from "./_components/PartnerCard";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import slugify from "slugify";
 
 export default async function Partnership({

@@ -13,6 +13,7 @@
       "about": "Hakkında",
       "career": "Kariyer",
       "gdpr": "KVKK",
+      "references": "Referanslar",
       "partnership": "Temsilciliklerimiz",
       "products": "Ürünler",
       "contact": "İletişim"
@@ -44,5 +45,8 @@
   },
   "Partnership": {
     "title": "Temsilciliklerimiz"
+  },
+  "References": {
+    "title": "Referanslar"
   }
 }

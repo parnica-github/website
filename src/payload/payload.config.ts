@@ -16,6 +16,7 @@ import { About } from "./globals/pages/About";
 import { Partner } from "./collections/Partner";
 import { Product } from "./collections/Product";
 import { Logo } from "@/app/(front)/[locale]/_components/layout/Logo";
+import { Reference } from "./collections/Reference";
 
 const adapter = s3Adapter({
   config: {
@@ -40,7 +41,7 @@ export default buildConfig({
       },
     },
   },
-  collections: [Image, Partner, Product],
+  collections: [Image, Partner, Product, Reference],
   globals: [Footer, Contact, Home, GDPR, About],
   plugins: [
     cloudStorage({

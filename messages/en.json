@@ -13,6 +13,7 @@
       "about": "About",
       "career": "Career",
       "gdpr": "GDPR",
+      "references": "References",
       "partnership": "Partnership",
       "products": "Products",
       "contact": "Contact"
@@ -44,5 +45,8 @@
   },
   "Partnership": {
     "title": "Partnership"
+  },
+  "References": {
+    "title": "References"
   }
 }

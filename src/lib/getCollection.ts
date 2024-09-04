@@ -46,3 +46,10 @@ export const getProductBySlug = async (slug: string, locale: string) => {
     (doc) => slugify(doc.Title, { lower: true }) === slug
   );
 };
+
+export const getReferences = async (locale: string) =>
+  (
+    await (
+      await getPayloadClient()
+    ).find({ collection: "reference", locale, pagination: false })
+  ).docs;
