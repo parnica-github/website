@@ -25,6 +25,7 @@ module.exports = withPayload(
       EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
       EMAIL_TO: process.env.EMAIL_TO,
       EMAIL_USER: process.env.EMAIL_USER,
+      EMAIL_FROM: process.env.EMAIL_FROM,
     },
   }),
   {

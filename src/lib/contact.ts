@@ -1,5 +1,11 @@
 import nodemailer from "nodemailer";
-import { EMAIL_HOST, EMAIL_PASSWORD, EMAIL_TO, EMAIL_USER } from "./config";
+import {
+  EMAIL_HOST,
+  EMAIL_PASSWORD,
+  EMAIL_TO,
+  EMAIL_USER,
+  EMAIL_FROM,
+} from "./config";
 import { ContactRequest } from "./models";
 
 export async function sendEmail({
@@ -31,7 +37,7 @@ export async function sendEmail({
   `;
 
   await transporter.sendMail({
-    from: `${name} ${surname} <${EMAIL_USER}>`,
+    from: `${name} ${surname} <${EMAIL_FROM}>`,
     to: EMAIL_TO,
     subject: "Parnica İletişim",
     html: htmlContent,
